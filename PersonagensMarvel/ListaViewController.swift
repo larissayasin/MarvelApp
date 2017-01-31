@@ -21,6 +21,9 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
         pesquisa.delegate = self
         resultado.delegate = self
         resultado.dataSource = self
+        
+        resultado.backgroundView = UIImageView(image: UIImage(named: "marvelstudio"))
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
