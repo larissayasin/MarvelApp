@@ -14,6 +14,7 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
     @IBOutlet weak var resultado: UITableView!
     var pesquisaAtiva : Bool = false
     var dadosBusca = [Personagem]()
+    let marvelAPI = MarvelApi()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +46,10 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        
-        self.resultado.reloadData()
+        if(!pesquisaAtiva){
+            marvelAPI.buscarPesonagens(busca: searchText)
+            self.resultado.reloadData()
+        }
     }
     
     
@@ -62,10 +64,10 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personagemCell") as! PersonagemTableViewCell;
-      let row = indexPath.row
+        let row = indexPath.row
         
         cell.nome.text = dadosBusca[row].nome
-     //   cell.publicacoes.text = dadosBusca[row].listaHQ.publicacoes ?? "0"
+        //   cell.publicacoes.text = dadosBusca[row].listaHQ.publicacoes ?? "0"
         
         
         return cell;

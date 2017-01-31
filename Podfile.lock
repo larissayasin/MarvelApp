@@ -2,11 +2,13 @@ PODS:
   - Alamofire (4.3.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - CryptoSwift (0.6.7)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`)
   - AlamofireImage (from `https://github.com/Alamofire/AlamofireImage.git`)
+  - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `master`)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
@@ -14,6 +16,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/Alamofire/Alamofire.git
   AlamofireImage:
     :git: https://github.com/Alamofire/AlamofireImage.git
+  CryptoSwift:
+    :branch: master
+    :git: https://github.com/krzyzanowskim/CryptoSwift
   SwiftyJSON:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
@@ -24,6 +29,9 @@ CHECKOUT OPTIONS:
   AlamofireImage:
     :commit: a4d4c0e36c3f17a80ad89687348bedbc523bba11
     :git: https://github.com/Alamofire/AlamofireImage.git
+  CryptoSwift:
+    :commit: bf3a902e09f759ec48b90c29b6b4d58d06686f74
+    :git: https://github.com/krzyzanowskim/CryptoSwift
   SwiftyJSON:
     :commit: adf34cfb4c9f2ff4e3c420c6d9fb1e2eaf3b3791
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
@@ -31,8 +39,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 1f72088aff8f6b40828dadd61be2e9a31beca01e
   AlamofireImage: 0ff319da83d6abb78a661d7296e742e7f65e15f5
+  CryptoSwift: 8f7b936cfd910257631f30d26e7188fa64e91e97
   SwiftyJSON: 05cf0e98a950e2ba343735264f5a96b81e755d00
 
-PODFILE CHECKSUM: 6e85ec55f0ea3c3b3aed615b92282d5b8a4ed8df
+PODFILE CHECKSUM: 60eed0986c001a79e8c17dfd60bb8f63a6327665
 
 COCOAPODS: 1.2.0

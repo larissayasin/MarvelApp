@@ -8,6 +8,7 @@
 
 import Foundation
 struct Personagem {
+    let id : Int
     let nome : String
     let descricao : String
     let imagem : String

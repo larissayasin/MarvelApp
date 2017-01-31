@@ -77,12 +77,12 @@
 		7EA78DAC1E3C165300B6F822 /* PersonagensMarvel */ = {
 			isa = PBXGroup;
 			children = (
+				7EA78DB91E3C165300B6F822 /* Info.plist */,
+				7EA78DB41E3C165300B6F822 /* Assets.xcassets */,
+				7EA78DB11E3C165300B6F822 /* Main.storyboard */,
+				7EA78DB61E3C165300B6F822 /* LaunchScreen.storyboard */,
 				7EA78DAD1E3C165300B6F822 /* AppDelegate.swift */,
 				7EA78DAF1E3C165300B6F822 /* ListaViewController.swift */,
-				7EA78DB11E3C165300B6F822 /* Main.storyboard */,
-				7EA78DB41E3C165300B6F822 /* Assets.xcassets */,
-				7EA78DB61E3C165300B6F822 /* LaunchScreen.storyboard */,
-				7EA78DB91E3C165300B6F822 /* Info.plist */,
 				7ED4E6E31E3FF63400F14950 /* PersonagemTableViewCell.swift */,
 				7ED4E6E51E4006EC00F14950 /* Personagem.swift */,
 				7ED4E6E71E4007CF00F14950 /* ListaHQ.swift */,
