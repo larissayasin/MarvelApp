@@ -16,9 +16,9 @@ import CryptoSwift
 class MarvelApi {
     let apiKey = "711fd2dbd94286bae7545a691a06c9d3"
     let privateKey = "07af905761fee2b0a1221806e46e3265c5f93631"
-    let ts =  Date().description
+    let ts =  "\(NSDate().timeIntervalSince1970 * 1000)"
     let imageSize = "standard_xlarge"
-    let endPoint = "http://gateway.marvel.com/"
+    let endPoint = "https://gateway.marvel.com/"
     let charactersAPI = "v1/public/characters"
     
     func buscarPesonagens(busca : String) -> [Personagem]{
