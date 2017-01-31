@@ -1,12 +1,38 @@
 PODS:
-  - SwiftyJSON (2.3.2)
+  - Alamofire (4.3.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - SwiftyJSON
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`)
+  - AlamofireImage (from `https://github.com/Alamofire/AlamofireImage.git`)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire.git
+  AlamofireImage:
+    :git: https://github.com/Alamofire/AlamofireImage.git
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: fa3c6d09b603f417c7788adb51ca0cade75b3d67
+    :git: https://github.com/Alamofire/Alamofire.git
+  AlamofireImage:
+    :commit: a4d4c0e36c3f17a80ad89687348bedbc523bba11
+    :git: https://github.com/Alamofire/AlamofireImage.git
+  SwiftyJSON:
+    :commit: adf34cfb4c9f2ff4e3c420c6d9fb1e2eaf3b3791
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  Alamofire: 1f72088aff8f6b40828dadd61be2e9a31beca01e
+  AlamofireImage: 0ff319da83d6abb78a661d7296e742e7f65e15f5
+  SwiftyJSON: 05cf0e98a950e2ba343735264f5a96b81e755d00
 
-PODFILE CHECKSUM: a52f51c3847584da98fef35eea97d97595fd8fc1
+PODFILE CHECKSUM: 6e85ec55f0ea3c3b3aed615b92282d5b8a4ed8df
 
 COCOAPODS: 1.2.0
