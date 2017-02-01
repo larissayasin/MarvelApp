@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+import SwiftyJSON
 
 class ListaViewController: UIViewController,  UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
+    @IBOutlet weak var carregando: UIActivityIndicatorView!
     @IBOutlet weak var pesquisa: UISearchBar!
     @IBOutlet weak var resultado: UITableView!
     var pesquisaAtiva : Bool = false
@@ -23,7 +27,7 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
         resultado.dataSource = self
         
         resultado.backgroundView = UIImageView(image: UIImage(named: "marvelstudio"))
-
+        carregando.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -50,8 +54,47 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(!pesquisaAtiva){
-            marvelAPI.buscarPesonagens(busca: searchText)
-            self.resultado.reloadData()
+            carregando.isHidden = false
+            carregando.startAnimating()
+            self.dadosBusca.removeAll()
+            let url = marvelAPI.buscarURL(busca: searchText)
+            Alamofire.request(url, method: .get).validate().responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    
+                    let json = JSON(value)
+                    //json["data"]["results"][0]
+                    if let items = json["data"]["results"].array {
+                        for item in items {
+                            let id = item["id"].int
+                            let nome = item["name"].string
+                            let descricao = item["description"].string
+                            let imagem = item["thumbnail"]["path"].string! + self.marvelAPI.imageSize + item["thumbnail"]["extension"].string!
+                            let publicacoes = item["comics"]["available"].int
+                            
+                            let person = Personagem(id: id, nome: nome, descricao: descricao, imagem: imagem, publicacoes: publicacoes)
+                            self.dadosBusca += [person]
+                        }
+                        
+                        self.resultado.reloadData()
+                        
+                        self.carregando.isHidden = true
+                        self.carregando.stopAnimating()
+                    }
+                    print("JSON: \(json)")
+                case .failure(let error):
+                    self.carregando.isHidden = true
+                    self.carregando.stopAnimating()
+                    let alertController = UIAlertController(title: "", message: "Tente novamente", preferredStyle: .alert)
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: .default) { action in
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    self.present(alertController, animated: true)
+                    print("ERRO:  \(error)")
+                }
+            }
         }
     }
     
@@ -70,11 +113,28 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
         let row = indexPath.row
         
         cell.nome.text = dadosBusca[row].nome
-        //   cell.publicacoes.text = dadosBusca[row].listaHQ.publicacoes ?? "0"
+        
+        let url = URL(string:  dadosBusca[row].imagem!)!
+        //    let placeholderImage = UIImage(named: "placeholder")!
+        
+        cell.imagem.af_setImage(withURL: url)
+        
+        // cell.imagem = marvelAPI.buscarImagemPersonagem(urlImg: dadosBusca[row].imagem!, imgView: cell.imagem)
+        
+        cell.publicacoes.text = String(describing: dadosBusca[row].publicacoes!)
         
         
         return cell;
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! PersonagemTableViewCell // or your cell subclass
+        let indexPath = self.resultado.indexPath(for: cell)
+        let p = dadosBusca[(indexPath?.row)!]
+        let viewController = segue.destination as! PersonagemViewController
+        viewController.personagem = p
+    }
+    
     
     
 }
