@@ -16,6 +16,7 @@
 		7ED4E6E61E4006EC00F14950 /* Personagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4E6E51E4006EC00F14950 /* Personagem.swift */; };
 		7ED4E6EA1E4021E500F14950 /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4E6E91E4021E500F14950 /* MarvelAPI.swift */; };
 		7ED4E6EC1E417D7B00F14950 /* PersonagemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4E6EB1E417D7B00F14950 /* PersonagemViewController.swift */; };
+		7ED4E6EE1E4191EA00F14950 /* HqCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4E6ED1E4191EA00F14950 /* HqCollectionViewCell.swift */; };
 		8F378A899AD07059BCF76622 /* Pods_PersonagensMarvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B416B61F416CB37003970AE /* Pods_PersonagensMarvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		7ED4E6E51E4006EC00F14950 /* Personagem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Personagem.swift; sourceTree = "<group>"; };
 		7ED4E6E91E4021E500F14950 /* MarvelAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
 		7ED4E6EB1E417D7B00F14950 /* PersonagemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonagemViewController.swift; sourceTree = "<group>"; };
+		7ED4E6ED1E4191EA00F14950 /* HqCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HqCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				7ED4E6E51E4006EC00F14950 /* Personagem.swift */,
 				7ED4E6E91E4021E500F14950 /* MarvelAPI.swift */,
 				7ED4E6EB1E417D7B00F14950 /* PersonagemViewController.swift */,
+				7ED4E6ED1E4191EA00F14950 /* HqCollectionViewCell.swift */,
 			);
 			path = PersonagensMarvel;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				7ED4E6EA1E4021E500F14950 /* MarvelAPI.swift in Sources */,
 				7ED4E6E41E3FF63400F14950 /* PersonagemTableViewCell.swift in Sources */,
 				7EA78DAE1E3C165300B6F822 /* AppDelegate.swift in Sources */,
+				7ED4E6EE1E4191EA00F14950 /* HqCollectionViewCell.swift in Sources */,
 				7ED4E6EC1E417D7B00F14950 /* PersonagemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -69,7 +69,7 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
                             let id = item["id"].int
                             let nome = item["name"].string
                             let descricao = item["description"].string
-                            let imagem = item["thumbnail"]["path"].string! + self.marvelAPI.imageSize + item["thumbnail"]["extension"].string!
+                            let imagem = item["thumbnail"]["path"].string! + self.marvelAPI.imageStandardSize + item["thumbnail"]["extension"].string!
                             let publicacoes = item["comics"]["available"].int
                             
                             let person = Personagem(id: id, nome: nome, descricao: descricao, imagem: imagem, publicacoes: publicacoes)
@@ -114,12 +114,12 @@ class ListaViewController: UIViewController,  UITableViewDataSource, UITableView
         
         cell.nome.text = dadosBusca[row].nome
         
-        let url = URL(string:  dadosBusca[row].imagem!)!
+       // let url = URL(string:  dadosBusca[row].imagem!)!
         //    let placeholderImage = UIImage(named: "placeholder")!
         
-        cell.imagem.af_setImage(withURL: url)
+        //cell.imagem.af_setImage(withURL: url)
         
-        // cell.imagem = marvelAPI.buscarImagemPersonagem(urlImg: dadosBusca[row].imagem!, imgView: cell.imagem)
+         cell.imagem = marvelAPI.buscarImagemPersonagem(urlImg: dadosBusca[row].imagem!, imgView: cell.imagem)
         
         cell.publicacoes.text = String(describing: dadosBusca[row].publicacoes!)
         
